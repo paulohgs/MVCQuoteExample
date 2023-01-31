@@ -18,7 +18,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getQuote()
+        quoteView.didTapButtonHandler = { [weak self] in
+            self?.getQuote()
+        }
     }
 
     func getQuote() {
