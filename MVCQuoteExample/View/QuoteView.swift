@@ -9,16 +9,29 @@ import UIKit
 
 class QuoteView: UIView {
 
+    var didTapButtonHandler: (() -> Void)?
+
+    private lazy var getButton: UIButton = {
+        let button = UIButton()
+        button.configuration = .bordered()
+        button.setTitle("Get new quote", for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        return button
+    }()
+
     private var animeLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
         return label
     }()
 
     private var characterLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18)
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -26,6 +39,7 @@ class QuoteView: UIView {
     private var quoteLabel: UILabel = {
         let label = UILabel()
         label.font = .systemFont(ofSize: 18)
+        label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
         return label
@@ -55,6 +69,10 @@ class QuoteView: UIView {
         characterLabel.text = model.character
         quoteLabel.text = model.quote
     }
+
+    @objc func didTapButton() {
+        didTapButtonHandler?()
+    }
 }
 
 extension QuoteView: ViewCoding {
@@ -64,13 +82,18 @@ extension QuoteView: ViewCoding {
 
     func setupHierarchy() {
         addSubview(stack)
+        addSubview(getButton)
     }
 
     func setupConstraints() {
         NSLayoutConstraint.activate([
+            // stack constraints
             stack.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             stack.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            stack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10)
+            stack.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
+            // button constraints
+            getButton.topAnchor.constraint(equalTo: stack.bottomAnchor, constant: 10),
+            getButton.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
 }
