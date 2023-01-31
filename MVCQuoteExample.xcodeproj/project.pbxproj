@@ -15,6 +15,7 @@
 		B936CAAD298953AB0048927C /* QuoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936CAAC298953AB0048927C /* QuoteView.swift */; };
 		B936CAAF298953BA0048927C /* QuoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936CAAE298953BA0048927C /* QuoteModel.swift */; };
 		B936CAB2298954A10048927C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936CAB1298954A10048927C /* API.swift */; };
+		B936CAB5298960580048927C /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B936CAB4298960580048927C /* ViewCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		B936CAAC298953AB0048927C /* QuoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteView.swift; sourceTree = "<group>"; };
 		B936CAAE298953BA0048927C /* QuoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteModel.swift; sourceTree = "<group>"; };
 		B936CAB1298954A10048927C /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B936CAB4298960580048927C /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		B936CA94298950220048927C /* MVCQuoteExample */ = {
 			isa = PBXGroup;
 			children = (
+				B936CAB329895ADE0048927C /* Protocol */,
 				B936CAB0298954960048927C /* Service */,
 				B936CAAB2989539A0048927C /* View */,
 				B936CAAA298953910048927C /* ViewController */,
@@ -103,6 +106,14 @@
 				B936CAB1298954A10048927C /* API.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		B936CAB329895ADE0048927C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B936CAB4298960580048927C /* ViewCode.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +189,7 @@
 				B936CA9A298950220048927C /* ViewController.swift in Sources */,
 				B936CA96298950220048927C /* AppDelegate.swift in Sources */,
 				B936CA98298950220048927C /* SceneDelegate.swift in Sources */,
+				B936CAB5298960580048927C /* ViewCode.swift in Sources */,
 				B936CAAF298953BA0048927C /* QuoteModel.swift in Sources */,
 				B936CAB2298954A10048927C /* API.swift in Sources */,
 				B936CAAD298953AB0048927C /* QuoteView.swift in Sources */,

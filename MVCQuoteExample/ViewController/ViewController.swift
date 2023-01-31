@@ -18,13 +18,14 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        getQuote()
     }
 
     func getQuote() {
         Task {
             do {
                 self.quoteModel = try await API().fetch()
+                quoteView.configureView(model: quoteModel)
             } catch {
                 print("Request failed with error: \(error)")
             }
