@@ -38,7 +38,7 @@ class QuoteView: UIView {
 
     private var quoteLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 18)
+        label.font = .italicSystemFont(ofSize: 18)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 0
@@ -67,7 +67,7 @@ class QuoteView: UIView {
     func configureView(model: Quote) {
         animeLabel.text = model.anime
         characterLabel.text = model.character
-        quoteLabel.text = model.quote
+        quoteLabel.text = "'\(model.quote)'"
     }
 
     @objc func didTapButton() {
